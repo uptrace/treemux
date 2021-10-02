@@ -1,14 +1,33 @@
-<p align="center">
-  <a href="https://uptrace.dev/?utm_source=gh-redis&utm_campaign=gh-redis-banner1">
-    <img src="https://raw.githubusercontent.com/uptrace/roadmap/master/banner1.png" alt="All-in-one tool to optimize performance and monitor errors & logs">
-  </a>
-</p>
-
 # High-speed and flexible HTTP router for Go
 
 [![build workflow](https://github.com/uptrace/treemux/actions/workflows/build.yml/badge.svg)](https://github.com/uptrace/treemux/actions)
 [![PkgGoDev](https://pkg.go.dev/badge/github.com/uptrace/treemux)](https://pkg.go.dev/github.com/uptrace/treemux)
 [![Chat](https://discordapp.com/api/guilds/752070105847955518/widget.png)](https://discord.gg/rWtp5Aj)
+
+treemux is archived and you should migrate to [**BunRouter**](https://github.com/uptrace/bunrouter)
+which has a compatible API and is much faster.
+
+```
+benchmark                        old ns/op     new ns/op     delta
+BenchmarkRouterSimple-12         37.4          16.5          -55.80%
+BenchmarkRouterRoot-12           14.7          11.1          -24.52%
+BenchmarkRouterParam-12          167           24.0          -85.67%
+BenchmarkRouterLongParams-12     324           42.2          -86.95%
+
+benchmark                        old allocs     new allocs     delta
+BenchmarkRouterSimple-12         0              0              +0.00%
+BenchmarkRouterRoot-12           0              0              +0.00%
+BenchmarkRouterParam-12          1              0              -100.00%
+BenchmarkRouterLongParams-12     1              0              -100.00%
+
+benchmark                        old bytes     new bytes     delta
+BenchmarkRouterSimple-12         0             0             +0.00%
+BenchmarkRouterRoot-12           0             0             +0.00%
+BenchmarkRouterParam-12          32            0             -100.00%
+BenchmarkRouterLongParams-12     64            0             -100.00%
+```
+
+---
 
 - [Basic example](/example/basic/)
 - [http.HandlerFunc example](/example/basic-compat/)
